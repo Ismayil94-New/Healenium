@@ -1,0 +1,13 @@
+services:
+  demo-app:
+    image: nginx:1.27-alpine
+    volumes:
+      - ./demo-app:/usr/share/nginx/html:ro
+    ports:
+      - "8090:80"
+    networks:
+      - healenium
+networks:
+  healenium:
+    external: true
+    name: healenium
